@@ -157,6 +157,10 @@ input:focus {outline: none;}
 }
 
 @media (max-width: 768px) {
+	#title {
+		margin-top: 20px;
+	}
+
 	.email {
 		width: calc(100% - 10px);
 		margin: 0 5px;
