@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Some Epic Title</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <style>
+            body {
+                background-color: #EEEEEE;
+            }
+            
+            .custom-content {
+                width: 60%;
+                position: absolute;
+                top: 5%;
+                left: 20%;
+            }
+            
+            .idea {
+                color: #FF5722;
+                text-decoration: underline;
+                font-size: 30px;
+            }
+            
+            .idea:hover {
+                color: dimgray;
+            }
+            
+            hr {
+                border-top: 1px solid #8c8b8b;
+            }
+            
+            .footer {
+                padding-top: 10px;
+            }
+        </style>
+        
+        <script>
+            function getIdea() {
+                $.get("data.txt", function(data) {
+                    var ideaText = "";
+                    var ideaLink = "";
+                    var items = data.split('\n');
+                    var cur = 1; // This way you always enter the while loop.
+                    while (cur % 2 != 0) {
+                        cur = Math.floor((Math.random() * items.length));
+                    }
+                    ideaText = items[cur];
+                    ideaLink = items[cur + 1];
+                    $(".idea").text(ideaText);
+                    $(".idea").attr("href", ideaLink);
+                });
+            }
+        </script>
+        
+    </head>
+    <body>
+        <div class="custom-content container">
+            <h1>So, you are bored. How about you...</h1>
+            <hr />
+            <a class="idea">Learn to hoola hoop</a>
+            <hr />
+            <button class="btn btn-success btn-block" onclick="getIdea()">Get Idea</button>
+            <div class="footer">
+                <a href="#">Submit An Idea/Give Feedback</a>
+            </div>
+        </div>
+    </body>
+</html>
