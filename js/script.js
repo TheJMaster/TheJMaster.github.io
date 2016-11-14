@@ -1,14 +1,3 @@
-var config = {
-  apiKey: "AIzaSyAym2Kdyp1Vt5VbKLMCY7fM2t7qzUwJZT4",
-  authDomain: "pitch-mate.firebaseapp.com",
-  databaseURL: "https://pitch-mate.firebaseio.com/",
-  storageBucket: "pitch-mate.appspot.com"
-};
-firebase.initializeApp(config);
-
-// Get a reference to the database service
-var database = firebase.database();
-
 var introSeen = false;
 var featuresSeen = false;
 var teamSeen = false;
@@ -27,6 +16,7 @@ var $signup_section = $("#signup");
 
 
 window.onload = function () {
+   // Disables parallax effect for Firefox
    var isFirefox = typeof InstallTrigger !== 'undefined';
    if (isFirefox) {
       $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
