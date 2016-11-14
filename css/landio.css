@@ -31,6 +31,10 @@ input:focus {outline: none;}
 	height: auto;
 }
 
+.nav-item:hover {
+	cursor: pointer;
+}
+
 .jumbotron {
 	background: #663fb5 url(../img/bg-header4.png) no-repeat center bottom fixed;
 }

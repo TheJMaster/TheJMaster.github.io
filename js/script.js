@@ -25,14 +25,8 @@ var $email_msg = $("#email_msg");
 var $hero_section = $("#hero");
 var $intro_section = $("#intro");
 var $feature_section = $("#features");
-var $team_section = $("#testimonials");
+var $team_section = $("#team");
 var $signup_section = $("#signup");
-
-// var heroHeight = $("#hero").height();
-// var introHeight = $("#intro").height();
-// var featureHeight = $("#features").height();
-// var teamHeight = $("#testimonials").height();
-// var signupHeight = $("#signup").height();
 
 
 window.onload = function () {
@@ -40,26 +34,13 @@ window.onload = function () {
    if (isFirefox) {
       $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
    }
-
    
    $hero_submit_button.click(submitEmail);
-   $("#hero_email_form").click(function(){
-      if (!heroEmailClicked) {
-         console.log("Hero email form clicked");
-         heroEmailClicked = true;
-         mixpanel.track("Hero email box clicked");
-      }
-   });
-
-   $("#inputEmail").click(function(){
-      if (!footerEmailClicked) {
-         console.log("Footer email form clicked");
-         footerEmailClicked = true;
-         mixpanel.track("Footer email box clicked");
-      }
-   });
-
+   mixpanelEventListeners();
+   initEventListeners();
+   
 };
+
 
 window.onscroll = function () {
    var scrollBottom = $(window).scrollTop() + $(window).height();
@@ -82,13 +63,48 @@ window.onscroll = function () {
    }
 }
 
-// Fucntion for a smooth click scroll.
-/*
-$("#arrow").click(function() {
-   $('html, body').animate({
-      scrollTop: $("#projects_container").offset().top
-   }, 500);
-});*/
+
+function initEventListeners () {
+   // Fucntions for a smooth click scroll.
+   $("#navbar_intro_link").click(function() {
+      console.log("intro");
+      $('html, body').animate({
+         scrollTop: $intro_section.offset().top
+      }, 600);
+   });
+   $("#navbar_features_link").click(function() {
+      console.log("features");
+      $('html, body').animate({
+         scrollTop: $feature_section.offset().top
+      }, 900);
+   });
+   $("#navbar_team_link").click(function() {
+      console.log("team");
+      $('html, body').animate({
+         scrollTop: $team_section.offset().top
+      }, 1200);
+   });
+}
+
+// Event listeners for Mixpanel triggers.
+function mixpanelEventListeners () {
+   $("#hero_email_form").click(function(){
+      if (!heroEmailClicked) {
+         console.log("Hero email form clicked");
+         heroEmailClicked = true;
+         mixpanel.track("Hero email box clicked");
+      }
+   });
+
+   $("#inputEmail").click(function(){
+      if (!footerEmailClicked) {
+         console.log("Footer email form clicked");
+         footerEmailClicked = true;
+         mixpanel.track("Footer email box clicked");
+      }
+   });
+}
+
 
 // Email submittion checker.
 function submitEmail() {
