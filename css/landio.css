@@ -112,11 +112,14 @@ input:focus {outline: none;}
 	left: 50%;
 }
 
+#down_arrow a span:hover {
+	cursor: pointer;
+}
+
 #down_arrow a {
 	padding-top: 70px;
 }
 #down_arrow a span {
-	cursor: default;
 	position: absolute;
 	top: 0;
 	left: 50%;

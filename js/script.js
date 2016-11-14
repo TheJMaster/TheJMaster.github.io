@@ -71,6 +71,12 @@ function initEventListeners () {
          scrollTop: $team_section.offset().top
       }, 1200);
    });
+   $("#down_arrow").click(function() {
+      console.log("arrow");
+      $('html, body').animate({
+         scrollTop: $intro_section.offset().top
+      }, 600);
+   });
 }
 
 // Event listeners for Mixpanel triggers.
