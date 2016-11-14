@@ -82,7 +82,15 @@ window.onscroll = function () {
    }
 }
 
+// Fucntion for a smooth click scroll.
+/*
+$("#arrow").click(function() {
+   $('html, body').animate({
+      scrollTop: $("#projects_container").offset().top
+   }, 500);
+});*/
 
+// Email submittion checker.
 function submitEmail() {
    $email_msg.css("opacity", 1);
    console.log("clicked");
@@ -103,11 +111,13 @@ function submitEmail() {
    }, 5000);
 }
 
+// Regex for proper email format.
 function validateEmail(email) {
    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
    return re.test(email);
 }
 
+// Log data on Firebase
 function writeUserData(userId, name, email) {
    firebase.database().ref('users/' + userId).set({
       username: name,
