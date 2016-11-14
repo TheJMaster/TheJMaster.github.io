@@ -16,6 +16,8 @@ var introSeen = false;
 var featuresSeen = false;
 var teamSeen = false;
 var signupSeen = false;
+var heroEmailClicked = false;
+var footerEmailClicked = false;
 
 var $hero_submit_button = $("#hero_email_submit");
 var $email_msg = $("#email_msg");
@@ -39,10 +41,23 @@ window.onload = function () {
       $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
    }
 
-   //mixpanel.track("Video play");
-
-   console.log("test");
+   
    $hero_submit_button.click(submitEmail);
+   $("#hero_email_form").click(function(){
+      if (!heroEmailClicked) {
+         console.log("Hero email form clicked");
+         heroEmailClicked = true;
+         mixpanel.track("Hero email box clicked");
+      }
+   });
+
+   $("#inputEmail").click(function(){
+      if (!footerEmailClicked) {
+         console.log("Footer email form clicked");
+         footerEmailClicked = true;
+         mixpanel.track("Footer email box clicked");
+      }
+   });
 
 };
 
@@ -58,11 +73,11 @@ window.onscroll = function () {
       featuresSeen = true;
    } else if (!teamSeen && scrollBottom > $team_section.offset().top + $team_section.outerHeight(true) && scrollBottom < $team_section.offset().top + $team_section.outerHeight(true) + 50) {
       console.log("triggering TEAM mixpanel");
-      mixpanel.track("Features Seen");
+      mixpanel.track("Team Seen");
       teamSeen = true;
    } else if (!signupSeen && scrollBottom > $signup_section.offset().top + $signup_section.outerHeight(true) && scrollBottom < $signup_section.offset().top + $signup_section.outerHeight(true) + 50) {
       console.log("triggering SIGNUP mixpanel");
-      mixpanel.track("Features Seen");
+      mixpanel.track("Signup Seen");
       signupSeen = true;
    }
 }
