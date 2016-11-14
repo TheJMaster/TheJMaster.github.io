@@ -1,6 +1,7 @@
 // Set the configuration for your app
 // TODO: Replace with your project's config object
-/*var config = {
+/*
+var config = {
   apiKey: "AIzaSyAym2Kdyp1Vt5VbKLMCY7fM2t7qzUwJZT4",
   authDomain: "pitch-mate.firebaseapp.com",
   databaseURL: "https://pitch-mate.firebaseio.com/",
@@ -11,21 +12,64 @@ firebase.initializeApp(config);
 // Get a reference to the database service
 var database = firebase.database();
 */
+var introSeen = false;
+var featuresSeen = false;
+var teamSeen = false;
+var signupSeen = false;
+
 var $hero_submit_button = $("#hero_email_submit");
 var $email_msg = $("#email_msg");
 
-window.onload = function () {
+var $hero_section = $("#hero");
+var $intro_section = $("#intro");
+var $feature_section = $("#features");
+var $team_section = $("#testimonials");
+var $signup_section = $("#signup");
 
-   mixpanel.track("Video play");
+// var heroHeight = $("#hero").height();
+// var introHeight = $("#intro").height();
+// var featureHeight = $("#features").height();
+// var teamHeight = $("#testimonials").height();
+// var signupHeight = $("#signup").height();
+
+
+window.onload = function () {
+   var isFirefox = typeof InstallTrigger !== 'undefined';
+   if (isFirefox) {
+      $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
+   }
+
+   //mixpanel.track("Video play");
 
    console.log("test");
    $hero_submit_button.click(submitEmail);
 
 };
 
+window.onscroll = function () {
+   var scrollBottom = $(window).scrollTop() + $(window).height();
+   if (!introSeen && scrollBottom > $intro_section.offset().top + $intro_section.outerHeight(true) && scrollBottom < $intro_section.offset().top + $intro_section.outerHeight(true) + 50) {
+      console.log("triggering INTRO mixpanel");
+      mixpanel.track("Intro Seen");
+      introSeen = true;
+   } else if (!featuresSeen && scrollBottom > $feature_section.offset().top + $feature_section.outerHeight(true) && scrollBottom < $feature_section.offset().top + $feature_section.outerHeight(true) + 50) {
+      console.log("triggering FEATURES mixpanel");
+      mixpanel.track("Features Seen");
+      featuresSeen = true;
+   } else if (!teamSeen && scrollBottom > $team_section.offset().top + $team_section.outerHeight(true) && scrollBottom < $team_section.offset().top + $team_section.outerHeight(true) + 50) {
+      console.log("triggering TEAM mixpanel");
+      mixpanel.track("Features Seen");
+      teamSeen = true;
+   } else if (!signupSeen && scrollBottom > $signup_section.offset().top + $signup_section.outerHeight(true) && scrollBottom < $signup_section.offset().top + $signup_section.outerHeight(true) + 50) {
+      console.log("triggering SIGNUP mixpanel");
+      mixpanel.track("Features Seen");
+      signupSeen = true;
+   }
+}
+
 
 function submitEmail() {
-   $email_msg.css("opacity", 1)
+   $email_msg.css("opacity", 1);
    console.log("clicked");
    console.log(validateEmail($("#hero_email_form").val()));
    if (!validateEmail($("#hero_email_form").val())) { // Checks for proper email format
