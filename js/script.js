@@ -1,6 +1,3 @@
-// Set the configuration for your app
-// TODO: Replace with your project's config object
-
 var config = {
   apiKey: "AIzaSyAym2Kdyp1Vt5VbKLMCY7fM2t7qzUwJZT4",
   authDomain: "pitch-mate.firebaseapp.com",
