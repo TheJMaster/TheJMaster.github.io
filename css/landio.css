@@ -31,6 +31,10 @@ input:focus {outline: none;}
 	height: auto;
 }
 
+#navbar_logo:hover {
+	cursor: default;
+}
+
 .nav-item:hover {
 	cursor: pointer;
 }

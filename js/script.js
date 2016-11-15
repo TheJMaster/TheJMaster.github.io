@@ -32,19 +32,19 @@ window.onload = function () {
 window.onscroll = function () {
    var scrollBottom = $(window).scrollTop() + $(window).height();
    if (!introSeen && scrollBottom > $intro_section.offset().top + $intro_section.outerHeight(true) && scrollBottom < $intro_section.offset().top + $intro_section.outerHeight(true) + 50) {
-      console.log("triggering INTRO mixpanel");
+      console.log("MP: INTRO Seen");
       mixpanel.track("Intro Seen");
       introSeen = true;
    } else if (!featuresSeen && scrollBottom > $feature_section.offset().top + $feature_section.outerHeight(true) && scrollBottom < $feature_section.offset().top + $feature_section.outerHeight(true) + 50) {
-      console.log("triggering FEATURES mixpanel");
+      console.log("MP: FEATURES Seen");
       mixpanel.track("Features Seen");
       featuresSeen = true;
    } else if (!teamSeen && scrollBottom > $team_section.offset().top + $team_section.outerHeight(true) && scrollBottom < $team_section.offset().top + $team_section.outerHeight(true) + 50) {
-      console.log("triggering TEAM mixpanel");
+      console.log("MP: TEAM Seen");
       mixpanel.track("Team Seen");
       teamSeen = true;
    } else if (!signupSeen && scrollBottom > $signup_section.offset().top + $signup_section.outerHeight(true) && scrollBottom < $signup_section.offset().top + $signup_section.outerHeight(true) + 50) {
-      console.log("triggering SIGNUP mixpanel");
+      console.log("MP: SIGNUP Seen");
       mixpanel.track("Signup Seen");
       signupSeen = true;
    }
@@ -54,25 +54,21 @@ window.onscroll = function () {
 function initEventListeners () {
    // Fucntions for a smooth click scroll.
    $("#navbar_intro_link").click(function() {
-      console.log("intro");
       $('html, body').animate({
          scrollTop: $intro_section.offset().top
       }, 600);
    });
    $("#navbar_features_link").click(function() {
-      console.log("features");
       $('html, body').animate({
          scrollTop: $feature_section.offset().top
       }, 900);
    });
    $("#navbar_team_link").click(function() {
-      console.log("team");
       $('html, body').animate({
          scrollTop: $team_section.offset().top
       }, 1200);
    });
    $("#down_arrow").click(function() {
-      console.log("arrow");
       $('html, body').animate({
          scrollTop: $intro_section.offset().top
       }, 600);
@@ -83,7 +79,7 @@ function initEventListeners () {
 function mixpanelEventListeners () {
    $("#hero_email_form").click(function(){
       if (!heroEmailClicked) {
-         console.log("Hero email form clicked");
+         console.log("MP: Hero email form clicked");
          heroEmailClicked = true;
          mixpanel.track("Hero email box clicked");
       }
@@ -91,10 +87,30 @@ function mixpanelEventListeners () {
 
    $("#inputEmail").click(function(){
       if (!footerEmailClicked) {
-         console.log("Footer email form clicked");
+         console.log("MP: Footer email form clicked");
          footerEmailClicked = true;
          mixpanel.track("Footer email box clicked");
       }
+   });
+
+   $("#navbar_intro_link").click(function(){
+      console.log("MP: Intro navbar link clicked");
+      mixpanel.track("Intro navbar link clicked");
+   });
+
+   $("#navbar_features_link").click(function(){
+      console.log("MP: Features navbar link clicked");
+      mixpanel.track("Features navbar link clicked");
+   });
+
+   $("#navbar_team_link").click(function(){
+      console.log("MP: Team navbar link clicked");
+      mixpanel.track("Team navbar link clicked");
+   });
+
+   $("#down_arrow").click(function(){
+      console.log("MP: Down arrow clicked");
+      mixpanel.track("Down arrow clicked");
    });
 }
 
