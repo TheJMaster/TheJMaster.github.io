@@ -51,6 +51,12 @@ window.onscroll = function () {
 }
 
 
+// function mobileStyling () {
+//    $("#team").css("background", "url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/sm-mission-banner.png) no-repeat left bottom fixed");
+//    $(".jumbotron").css("background", "url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/sm-header4.png) no-repeat center top fixed");
+// }
+
+
 function initEventListeners () {
    // Fucntions for a smooth click scroll.
    $("#navbar_intro_link").click(function() {

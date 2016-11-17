@@ -200,6 +200,16 @@ input:focus {outline: none;}
 }
 
 @media (max-width: 768px) {
+	.jumbotron {
+		background: url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/sm-header4.png) no-repeat center top fixed;
+	}
+
+	#team {
+		padding-top: 90px;
+		padding-bottom: 90px;
+		background: url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/sm-mission-banner.png) no-repeat center top fixed;
+	}
+
 	#title {
 		margin-top: 20px;
 	}
