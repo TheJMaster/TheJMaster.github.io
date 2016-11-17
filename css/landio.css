@@ -26,6 +26,18 @@ input:focus {outline: none;}
 ::-moz-placeholder {  /* Firefox 19+ */color: white;}
 :-ms-input-placeholder {color: white;}
 
+.btn {
+	background-color: #A03864;
+	border: none;
+	transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+	background-color: #882b52;
+}
+
+/* ============================================================= */
+
 #navbar_logo {
 	width: 40px;
 	height: auto;
@@ -40,7 +52,7 @@ input:focus {outline: none;}
 }
 
 .jumbotron {
-	background: #663fb5 url(../img/bg-header4.png) no-repeat center bottom fixed;
+	background: url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/bg-header4.png) no-repeat center top fixed;
 }
 
 #slogan {
@@ -97,7 +109,9 @@ input:focus {outline: none;}
 	transition: background-color 0.2s ease-in-out;
 }
 
-
+#hero_email_submit:hover {
+	background-color: #882b52;
+}
 
 #email_msg {
 	float: left;
@@ -169,6 +183,14 @@ input:focus {outline: none;}
 	line-height: 3rem;
 	margin-bottom: 50px;
 }
+
+#team {
+	padding-top: 90px;
+	padding-bottom: 90px;
+	background: url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/bg-mission-banner.png) no-repeat left bottom fixed;
+}
+
+/* ======================================================================== */
 
 @media (max-width: 1200px) {
 	.email {
