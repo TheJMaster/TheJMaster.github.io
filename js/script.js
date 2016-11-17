@@ -23,7 +23,7 @@ window.onload = function () {
    }
    
    $hero_submit_button.click(submitEmail);
-   mixpanelEventListeners();
+   //mixpanelEventListeners();
    initEventListeners();
    
 };
