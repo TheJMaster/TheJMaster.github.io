@@ -23,7 +23,7 @@ window.onload = function () {
       $(".spinner").css("opacity", 0);
       
       $("nav, section, header, footer").fadeTo("slow", 1);
-   }, 600);
+   }, 800);
 
    // Disables parallax effect for Firefox
    var isFirefox = typeof InstallTrigger !== 'undefined';
