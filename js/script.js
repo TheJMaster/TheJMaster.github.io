@@ -21,12 +21,9 @@ window.onload = function () {
          $(this).css("display", "none");
       });
       $(".spinner").css("opacity", 0);
+      
       $("nav, section, header, footer").fadeTo("slow", 1);
    }, 600);
-
-   window.setTimeout(function () {
-      $("body").css("background", "white");
-   }, 700;
 
    // Disables parallax effect for Firefox
    var isFirefox = typeof InstallTrigger !== 'undefined';

@@ -58,7 +58,21 @@ input:focus {outline: none;}
 	background: -moz-linear-gradient(-45deg, #58BED2, #D3AD38); /* For Firefox 3.6 to 15 */
 	background: linear-gradient(-45deg, #58BED2, #D3AD38); /* Standard syntax */
 	z-index: 1000;
+	
+	color: white;
 	transition: all 1s ease;
+}
+
+#loading_container {
+	margin: auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#loading_container > h1 {
+	margin-top: 50px;
 }
 
 .spinner {
@@ -68,6 +82,7 @@ input:focus {outline: none;}
 	height: 40px;
 	text-align: center;
 	font-size: 10px;
+
 	transition: all 1s ease;
 }
 
