@@ -16,12 +16,6 @@ var $signup_section = $("#signup");
 
 
 window.onload = function () {
-   // Disables parallax effect for Firefox
-   var isFirefox = typeof InstallTrigger !== 'undefined';
-   if (isFirefox) {
-      $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
-   }
-
    window.setTimeout(function () {
       console.log("Loaded");
       $("#loading_screen").fadeTo("slow", 0, function(){
@@ -30,7 +24,15 @@ window.onload = function () {
       $(".spinner").css("opacity", 0);
       // $("nav, section, header, footer").css("display", "show");
       $("nav, section, header, footer").fadeTo("slow", 1);
-   }, 1000);
+   }, 600);
+
+   // Disables parallax effect for Firefox
+   var isFirefox = typeof InstallTrigger !== 'undefined';
+   if (isFirefox) {
+      $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
+   }
+
+   
    
    $hero_submit_button.click(submitEmail);
    //mixpanelEventListeners();
