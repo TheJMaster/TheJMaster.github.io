@@ -21,6 +21,16 @@ window.onload = function () {
    if (isFirefox) {
       $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
    }
+
+   window.setTimeout(function () {
+      console.log("Loaded");
+      $("#loading_screen").fadeTo("slow", 0, function(){
+         $(this).css("display", "none");
+      });
+      $(".spinner").css("opacity", 0);
+      // $("nav, section, header, footer").css("display", "show");
+      $("nav, section, header, footer").fadeTo("slow", 1);
+   }, 1000);
    
    $hero_submit_button.click(submitEmail);
    //mixpanelEventListeners();
