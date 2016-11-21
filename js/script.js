@@ -127,14 +127,9 @@ function mixpanelEventListeners () {
 // Email submittion checker.
 function submitEmail() {
    $email_msg.css("opacity", 1);
-   console.log("clicked");
-   console.log(validateEmail($("#hero_email_form").val()));
    if (!validateEmail($("#hero_email_form").val())) { // Checks for proper email format
-      console.log("wrong");
       $email_msg.text("*Please enter a valid email.");
-
    } else {
-      console.log("right");
       $email_msg.text("Success! Thank you for trying out Pitch Mate!");
       var currUserId = Math.floor((Math.random() * 100000) + 1);
       writeUserData(currUserId, null, $("#hero_email_form").val());
