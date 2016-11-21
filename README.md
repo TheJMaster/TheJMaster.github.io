@@ -1,4 +1,4 @@
 # Pitch Mate
 Quickly validate early stage ideas.
 
-A familiar, messaging style platform for testing and receiving feedback on your latest startup idea from a growing community of Seattle entrepreneurs.
+An innovative new tool that seamlessly tests and gathers feedback for your latest early stage idea from an experienced community of Seattle entrepreneurs.
