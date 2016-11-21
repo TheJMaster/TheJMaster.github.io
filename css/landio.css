@@ -295,17 +295,25 @@ nav, section, header, footer {
 
 #one_liner {
 	line-height: 3rem;
-	margin-bottom: 50px;
+	margin-bottom: 5.625rem;
 }
 
 #features {
 	background-color: white;
 }
 
-#team {
+.card-title {
+	margin-bottom: 30px;
+}
+
+#mission {
 	padding-top: 90px;
 	padding-bottom: 90px;
 	background: url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/bg-mission-banner.png) no-repeat left bottom fixed;
+}
+
+#description {
+	font-size: 1.2rem;
 }
 
 /* ======================================================================== */
@@ -324,7 +332,7 @@ nav, section, header, footer {
 		background-size: auto, cover;
 	}
 
-	#team {
+	#mission {
 		padding-top: 90px;
 		padding-bottom: 90px;
 /*		background: #663fb5;
@@ -361,6 +369,10 @@ nav, section, header, footer {
 
 	#down_arrow {
 		visibility: hidden;
+	}
+
+	#one_liner {
+		margin-bottom: 2.8125rem;
 	}
 }
 
