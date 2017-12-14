@@ -5,14 +5,15 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       <title>Pitch Mate</title>
-      <meta name="description" content="A free HTML template and UI Kit built on Bootstrap" />
-      <meta name="keywords" content="free html template, bootstrap, ui kit, sass" />
-      <meta name="author" content="Peter Finlan and Taty Grassini Codrops" />
+      <meta name="description" content="An innovative new tool that seamlessly tests and gathers feedback for your latest early stage idea from an experienced community of Seattle entrepreneurs." />
+      <meta name="keywords" content="idea, pitch, mate, early stage idea, early, stage, validation, validate, community" />
+      <meta name="author" content="Cedric Ith and Justin Johnson" />
       <link rel="manifest" href="img/favicon/manifest.json">
       <link rel="shortcut icon" href="img/favicon/logo_color.png">
       <meta name="msapplication-TileColor" content="#663fb5">
       <meta name="theme-color" content="#663fb5">
       <link rel="stylesheet" href="css/landio.css">
+      <link rel="stylesheet" href="css/style.css">
 
       <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
       <script src="https://www.gstatic.com/firebasejs/3.5.2/firebase-app.js"></script>
@@ -81,8 +82,8 @@
                   <li id="navbar_features_link" class="nav-item nav-item-toggable">
                      <a class="nav-link">Features</a>
                   </li>
-                  <li id="navbar_team_link" class="nav-item nav-item-toggable">
-                     <a class="nav-link">Team</a>
+                  <li id="navbar_mission_link" class="nav-item nav-item-toggable">
+                     <a class="nav-link">Mission</a>
                   </li>
                   
                </ul>
@@ -96,11 +97,11 @@
          
             <div class="container">
                <h1 id="title" class="display-3">Pitch Mate </h1>
-               <h2 class="m-b-3" id="slogan">Quickly validate early stage <em>ideas</em>.</h2>
-               <span id="alpha">Become an alpha tester</span>
+               <h2 class="m-b-3" id="slogan">Quickly validate <em>early stage ideas</em>.</h2>
+               <span id="alpha">Become an <em>alpha</em> tester</span>
                <div class="email">
-                  <label class="sr-only" for="inputEmail">Email address</label>
-                  <input type="email" id="hero_email_form" placeholder="Email address" autocomplete="off">
+                  <label class="sr-only" for="inputEmail">Email Address</label>
+                  <input type="email" id="hero_email_form" placeholder="Email Address" autocomplete="off">
                   <div id="hero_email_submit">SIGN UP</div>
                   <span id="email_msg">*Please enter a valid email.</span>
                </div>
@@ -114,9 +115,7 @@
          ================================================== -->
       <section id="intro" class="section-intro bg-faded text-xs-center">
          <div class="container">
-            <h3 id="one_liner" class="wp wp-1">A familiar, messaging style platform for testing and receiving feedback on your latest startup idea from a growing community of Seattle entrepreneurs.</h3>
-            <!--<p class="lead wp wp-2">Craft memorable, emotive experiences with our range of beautiful UI elements.</p>-->
-            <img src="img/mock.png" alt="iPad mock" class="img-fluid wp wp-3">
+            <h3 id="one_liner" class="wp wp-1">A platform to test & gather feedback on<br> early stage ideas from fellow entrepreneurs.</h3>
          </div>
       </section>
       <!-- Features
@@ -128,9 +127,8 @@
                   <div class="card">
                      <div class="card-block">
                         <span class="icon-pen display-1"></span>
-                        <h4 class="card-title">250</h4>
-                        <h6 class="card-subtitle text-muted">UI Elements</h6>
-                        <p class="card-text">Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras eu adipiscing ac cras at sem cras per senectus eu parturient quam.</p>
+                        <h4 class="card-title">Test</h4>
+                        <p class="card-text">Subit your idea and gather feedback on your <em>early stage idea</em> from our growing community of Seattle entrepreneurs.</p>
                      </div>
                   </div>
                </div>
@@ -138,9 +136,8 @@
                   <div class="card">
                      <div class="card-block">
                         <span class="icon-thunderbolt display-1"></span>
-                        <h4 class="card-title">Ultra</h4>
-                        <h6 class="card-subtitle text-muted">Modern design</h6>
-                        <p class="card-text">Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras eu adipiscing ac cras at sem cras per senectus eu parturient quam.</p>
+                        <h4 class="card-title">Evaluate</h4>
+                        <p class="card-text">Immerse yourself in Seattle’s vibrant startup community simply by reading delivered pitches and providing useful feedback.</p>
                      </div>
                   </div>
                </div>
@@ -148,9 +145,8 @@
                   <div class="card m-b-0">
                      <div class="card-block">
                         <span class="icon-heart display-1"></span>
-                        <h4 class="card-title">Free</h4>
-                        <h6 class="card-subtitle text-muted">Forever and ever</h6>
-                        <p class="card-text">Sed risus feugiat fusce eu sit conubia venenatis aliquet nisl cras eu adipiscing ac cras at sem cras per senectus eu parturient quam.</p>
+                        <h4 class="card-title">Connect</h4>
+                        <p class="card-text">Easily grow your network of Seattle entrepreneurs by connecting through early stage ideas.</p>
                      </div>
                   </div>
                </div>
@@ -246,15 +242,15 @@
       <!--Testimonials
          ================================================== -->
          
-         <section id="team" class="section-testimonials text-xs-center bg-inverse">
+         <section id="mission" class="section-testimonials text-xs-center bg-inverse">
             <div id="mission-container" class="container">
                <h3 class="sr-only">Testimonials</h3>
 
-               <p class="h1">Made by entrepreneurs. For entrepreneurs.</p>
+               <p class="h1">By Entrepreneurs. For Entrepreneurs.</p>
             </br></br>
             <div class="col-md-1 col-lg-2"></div>
-            <div class="col-md-10 col-lg-8">At Pitch Mate, the goal has always been to help entrepreneurs efficiently validate ideas so they can quickly get started pursuing their next venture.</div>
-            <div class="col-md-1 col-lg-2"></div>
+            <div id="description" class="col-md-10 col-lg-8">At Pitch Mate, we are on a mission to create the most  efficient and effective way to validate <em>early stage ideas</em>. An <em>early stage idea</em> is an idea that has withstood the earliest forms of a creator’s scrutiny, and is ready to enter the essential feedback cycle needed to develop a fully viable idea.
+            </div>
              <!-- <div id="carousel-testimonials" class="carousel slide" data-ride="carousel" data-interval="0">
                <div class="carousel-inner" role="listbox">
                  <div class="carousel-item active">

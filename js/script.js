@@ -1,6 +1,6 @@
 var introSeen = false;
 var featuresSeen = false;
-var teamSeen = false;
+var missionSeen = false;
 var signupSeen = false;
 var heroEmailClicked = false;
 var footerEmailClicked = false;
@@ -11,7 +11,7 @@ var $email_msg = $("#email_msg");
 var $hero_section = $("#hero");
 var $intro_section = $("#intro");
 var $feature_section = $("#features");
-var $team_section = $("#team");
+var $mission_section = $("#mission");
 var $signup_section = $("#signup");
 
 
@@ -31,10 +31,8 @@ window.onload = function () {
       $(".jumbotron").css({"background-position": "initial", "background-attachment": "initial"});
    }
 
-   
-   
    $hero_submit_button.click(submitEmail);
-   //mixpanelEventListeners();
+   mixpanelEventListeners();
    initEventListeners();
    
 };
@@ -50,22 +48,16 @@ window.onscroll = function () {
       console.log("MP: FEATURES Seen");
       mixpanel.track("Features Seen");
       featuresSeen = true;
-   } else if (!teamSeen && scrollBottom > $team_section.offset().top + $team_section.outerHeight(true) && scrollBottom < $team_section.offset().top + $team_section.outerHeight(true) + 50) {
-      console.log("MP: TEAM Seen");
-      mixpanel.track("Team Seen");
-      teamSeen = true;
+   } else if (!missionSeen && scrollBottom > $mission_section.offset().top + $mission_section.outerHeight(true) && scrollBottom < $mission_section.offset().top + $mission_section.outerHeight(true) + 50) {
+      console.log("MP: MISSION Seen");
+      mixpanel.track("Mission Seen");
+      missionSeen = true;
    } else if (!signupSeen && scrollBottom > $signup_section.offset().top + $signup_section.outerHeight(true) && scrollBottom < $signup_section.offset().top + $signup_section.outerHeight(true) + 50) {
       console.log("MP: SIGNUP Seen");
       mixpanel.track("Signup Seen");
       signupSeen = true;
    }
 }
-
-
-// function mobileStyling () {
-//    $("#team").css("background", "url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/sm-mission-banner.png) no-repeat left bottom fixed");
-//    $(".jumbotron").css("background", "url(../img/dot_grid_pattern.svg) repeat fixed, #663fb5 url(../img/sm-header4.png) no-repeat center top fixed");
-// }
 
 
 function initEventListeners () {
@@ -80,9 +72,9 @@ function initEventListeners () {
          scrollTop: $feature_section.offset().top
       }, 900);
    });
-   $("#navbar_team_link").click(function() {
+   $("#navbar_mission_link").click(function() {
       $('html, body').animate({
-         scrollTop: $team_section.offset().top
+         scrollTop: $mission_section.offset().top
       }, 1200);
    });
    $("#down_arrow").click(function() {
@@ -120,9 +112,9 @@ function mixpanelEventListeners () {
       mixpanel.track("Features navbar link clicked");
    });
 
-   $("#navbar_team_link").click(function(){
-      console.log("MP: Team navbar link clicked");
-      mixpanel.track("Team navbar link clicked");
+   $("#navbar_mission_link").click(function(){
+      console.log("MP: Mission navbar link clicked");
+      mixpanel.track("Mission navbar link clicked");
    });
 
    $("#down_arrow").click(function(){
@@ -135,14 +127,9 @@ function mixpanelEventListeners () {
 // Email submittion checker.
 function submitEmail() {
    $email_msg.css("opacity", 1);
-   console.log("clicked");
-   console.log(validateEmail($("#hero_email_form").val()));
    if (!validateEmail($("#hero_email_form").val())) { // Checks for proper email format
-      console.log("wrong");
       $email_msg.text("*Please enter a valid email.");
-
    } else {
-      console.log("right");
       $email_msg.text("Success! Thank you for trying out Pitch Mate!");
       var currUserId = Math.floor((Math.random() * 100000) + 1);
       writeUserData(currUserId, null, $("#hero_email_form").val());
